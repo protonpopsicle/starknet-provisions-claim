@@ -75,7 +75,6 @@ if __name__ == '__main__':
     print('maxFee:', max_fee)
     
     msg_value = 3000 * base_fee  # the transaction must have a correct payable amount: the invoked function costs roughly 3000 gas
-    print('max transaction cost in ether:', w3.from_wei(msg_value + max_fee, 'ether'))
 
     # payload formatted according to ABI spec for sendMessageToL2 function
     payload=(
@@ -114,7 +113,6 @@ if __name__ == '__main__':
     
     print('sending...')
     send_tx = w3.eth.send_raw_transaction(signed_tx.rawTransaction)
-    print('transaction hash:', send_tx)
     print('sent')
 
     # wait for transaction receipt
