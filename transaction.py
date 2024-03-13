@@ -114,9 +114,10 @@ if __name__ == '__main__':
     
     print('sending...')
     send_tx = w3.eth.send_raw_transaction(signed_tx.rawTransaction)
+    print('transaction hash:', send_tx)
     print('sent')
 
     # wait for transaction receipt
     print('waiting for transaction receipt...')
     tx_receipt = w3.eth.wait_for_transaction_receipt(send_tx)
-    print('transaction receipt: ', tx_receipt)
+    print('transaction receipt:', tx_receipt)
